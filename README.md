@@ -8,6 +8,9 @@ Your project description goes here. What problem did you solve? How did you solv
 
 - [x] Inventory of entire project.
 - [x] Create database
-- [] Diagram of Home page, Details page, and Add Movie page.
+- [x] Draw a diagram of Home page, Details page, and Add Movie page.
+- [] Create Details page, with back button to MovieList
+- [x] Create AddMovie page, with back button to MovieList
+- [] Create MovieItem. Route everything together.
 - [] Whiteboard schematic
 
