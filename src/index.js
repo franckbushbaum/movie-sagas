@@ -14,8 +14,20 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeEvery('ADD_MOVIE', addMovie)
 }
 //1 THE FUNCTIONS                                                  
+function* addMovie(action){
+    try {
+        console.log('WHAT IS ACTION', action)    
+
+    } catch {
+        console.log('ERROR in addMovie')
+    }
+}
+
+
+
 function* fetchAllMovies() {
     // get all movies from the DB
     try {

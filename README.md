@@ -14,10 +14,11 @@ Your project description goes here. What problem did you solve? How did you solv
 - [x] Create MovieItem. Route everything together.
 - [x] Whiteboard schematic
 - [] in /add. 
-    []Create 4 inputs. 3 go to 'movies' database. 1 of these sends to a Genre database. Test.
-    []Send movies data to Saga. Test.
+    [x]Create 4 inputs. 3 go to 'movies' database. 1 of these sends to a Genre database. Test.
+    [x]Send movies data to Saga. Test.
     []Create Function to post to server. Test.
     []Create server post to movies Database. Test.
+    []New Movie Shows up on page.
     []Recreate for Genre database. This will take research.
 
 
