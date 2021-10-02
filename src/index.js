@@ -15,7 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
 }
-
+//1 THE FUNCTIONS                                                  
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
@@ -31,7 +31,7 @@ function* fetchAllMovies() {
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
-
+//2 THE REDUCERS.        STORE.MOVIES         STORE.GENRES                                       
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
@@ -51,7 +51,7 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-
+//3 THE RANDOM SHIT                                        
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
