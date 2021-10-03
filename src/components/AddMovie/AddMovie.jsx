@@ -2,9 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import { TextField } from '@material-ui/core';
+import './AddMovie.css';
 import { $CombinedState } from 'redux';
 
 function AddMovie() {
+
     //Data to be sent to Sagas.
     const [movie, setMovie] = useState('');
 
@@ -63,24 +66,42 @@ function AddMovie() {
             <p>Under Construction...</p>
             <h2>Add a Movie</h2>
             <form onSubmit={handleSubmit} className="add-movie-form">
-                <input id={1}
+                <TextField 
+                    label="title"
+                    variant="outlined"
+                    required
+                    style= {{ backgroundColor: '#dbe3de'}} 
+                    id={1}
                     required
                     placeholder="Title"
                     value={movie.title}
                     onChange={setMovieTitle}
                 />
-                <input id={2}
+                <TextField 
+                    label="Add movie poster"
+                    variant="outlined"
+                    required
+                    style= {{ backgroundColor: '#dbe3de'}} 
+                    id={2}
                     required
                     placeholder="Poster"
                     value={movie.poster}
                     onChange={setMoviePoster}
                 />
-                <input id={3}
+                <TextField 
+                    label="description"
+                    variant="outlined"
+                    required
+                    style= {{ backgroundColor: '#dbe3de'}} 
+                    id={3}
                     required
                     placeholder="Description"
                     value={movie.description}
                     onChange={setMovieDescription}
                 />
+                {/* On Load, the value of the input will be 'Adventure', if the user happens to 
+                want to add a movie whose genre is 'Adventure', and doesn't select anything, I've noticed that
+                no value is sent. Perhaps bring this up tomorrow if time allows. */}
                  <select selected value={movie.genre} onChange={setGenre}>
                     <option value={1}>Adventure</option>
                     <option value={2}>Animated</option>

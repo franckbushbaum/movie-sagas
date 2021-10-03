@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import './MovieList.css'
+import Button from '@material-ui/core/Button';
+import MovieItem from '../MovieItem/MovieItem';
+import './MovieList.css';
 
 function MovieList() {
 
@@ -22,14 +24,16 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
-            <button className="addMovie" onClick={toAddMoviePage}>Add a Movie</button>
+            <Button variant="contained" className="addMovie" onClick={toAddMoviePage}>Add a Movie</Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
-                        </div>
+                // data {movie} is now being passed down to the child component, MovieItem. Now, we need to
+                // receive that data in the MovieItem component..
+                        <MovieItem 
+                            id={movie.id}
+                            title={movie.title}
+                            poster={movie.poster} />
                     );
                 })}
             </section>
