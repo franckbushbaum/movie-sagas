@@ -15,20 +15,33 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('ADD_MOVIE', addMovie)
+    yield takeEvery('SET_SELECTED_MOVIE', selectedMovie)
 }
 //1 THE FUNCTIONS                                                  
-function* addMovie(action){
+function* addMovie(action) {
     try {
         // console.log('WHAT IS ACTION', action)
         const newElement = action.payload
-        console.log('what is newElement', newElement)    
+        console.log('what is newElement', newElement)
         yield axios.post('api/movie', newElement)
-        yield put({type: 'FETCH_MOVIES'}) 
+        yield put({ type: 'FETCH_MOVIES' })
     } catch {
         console.log('ERROR in addMovie')
     }
 }
 
+function* selectedMovie(action) {
+    try {
+        //selected movie, action.payload will be selected move from /details
+        const movie = action.payload;
+        console.log('IN SELECTED MOVIEEEE', movie);
+        const movieDetails = yield axios.get(`/api/movie/details/${movie.id}`);
+        console.log('IN FUNCTION', movieDetails);
+        yield put({ type: 'SET_MOVIE_DETAIL', payload: movieDetails.data })
+    } catch (error) {
+        console.log('error in selectedMovie', error);
+    }
+}
 
 
 function* fetchAllMovies() {
@@ -41,7 +54,7 @@ function* fetchAllMovies() {
     } catch {
         console.log('get all error');
     }
-        
+
 }
 
 // Create sagaMiddleware
@@ -66,12 +79,25 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-//3 THE RANDOM SHIT                                        
+
+//Used to store specific movie when 'Description' button is clicked
+const specificMovie = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_MOVIE_DETAIL':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+
+//3 THE STORE
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        specificMovie
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
@@ -83,7 +109,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

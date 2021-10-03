@@ -31,9 +31,7 @@ function MovieList() {
                 // data {movie} is now being passed down to the child component, MovieItem. Now, we need to
                 // receive that data in the MovieItem component..
                         <MovieItem 
-                            id={movie.id}
-                            title={movie.title}
-                            poster={movie.poster} />
+                            movie={movie} />
                     );
                 })}
             </section>

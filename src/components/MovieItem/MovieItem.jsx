@@ -1,27 +1,31 @@
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import './MovieItem.css';
 
-function MovieItem({ id, title, poster }) {
+function MovieItem({ movie }) {
 
- //Set history to change pages.
- const history = useHistory();
+    //Set history to change pages.
+    const history = useHistory();
 
- const toDetailsPage = (id) => {
-     console.log('in details page', id)
-     history.push(`/details/${id}`)
- }
+    const dispatch = useDispatch();
+
+    const toDetailsPage = () => {
+        dispatch({ type: 'SET_SELECTED_MOVIE', payload: movie });
+        // console.log('IN SELECTED MOVIE', movie)
+        history.push('/details')
+    }
 
     return (
-        
-        <div key={id} className="item">
-            <h3 className="title">{title}</h3>
+
+        <div key={movie.id} className="item">
+            <h3 className="title">{movie.title}</h3>
             <div className="poster">
-            <img src={poster} alt={title} />
+                <img src={movie.poster} alt={movie.title} />
             </div>
-            <Button onClick={(event) => toDetailsPage(id)} variant="contained" size="small">Description</Button>
+            <Button onClick={toDetailsPage} variant="contained" size="small">Description</Button>
         </div>
-        
+
     );
 }
 

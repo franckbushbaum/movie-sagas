@@ -24,5 +24,7 @@ Your project description goes here. What problem did you solve? How did you solv
 
 - [x] Pass movies to individual component.
 - [x] .map and create a description button for each movie.
+- [] Create saga for Details.jsx
+
 
 
