@@ -23,6 +23,7 @@ function* addMovie(action){
         const newElement = action.payload
         console.log('what is newElement', newElement)    
         yield axios.post('api/movie', newElement)
+        yield put({type: 'FETCH_MOVIES'}) 
     } catch {
         console.log('ERROR in addMovie')
     }
