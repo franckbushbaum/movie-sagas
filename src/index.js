@@ -19,8 +19,10 @@ function* rootSaga() {
 //1 THE FUNCTIONS                                                  
 function* addMovie(action){
     try {
-        console.log('WHAT IS ACTION', action)    
-
+        // console.log('WHAT IS ACTION', action)
+        const newElement = action.payload
+        console.log('what is newElement', newElement)    
+        yield axios.post('api/movie', newElement)
     } catch {
         console.log('ERROR in addMovie')
     }

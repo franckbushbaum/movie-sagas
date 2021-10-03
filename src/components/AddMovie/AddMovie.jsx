@@ -15,6 +15,7 @@ function AddMovie() {
 
     //If there is a way to combine setMovieTitle, setMoviePoster and setMovieDescription
     //I would love to see it. Spoiler: There absolutely is one.
+
     const setMovieTitle = (event) => {
         setMovie({
             ...movie,
@@ -36,7 +37,13 @@ function AddMovie() {
         })
     }
 
-    // console.log(description);
+    const setGenre = (event) => {
+        setMovie({
+            ...movie,
+            genre: event.target.value
+        })
+    }
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -74,6 +81,20 @@ function AddMovie() {
                     value={movie.description}
                     onChange={setMovieDescription}
                 />
+                 <select selected value={movie.genre} onChange={setGenre}>
+                    <option >Adventure</option>
+                    <option >Animated</option>
+                    <option >Biographical</option>
+                    <option >Disaster</option>
+                    <option >Drama</option>
+                    <option >Epic</option>
+                    <option >Fantasy</option>
+                    <option >Musical</option>
+                    <option >Romantic</option>
+                    <option >Science Fiction</option>
+                    <option >Space-Opera</option>
+                    <option >Superhero</option>
+                </select>
                 <input type='submit' value='Submit' />
             </form>
             <button onClick={backToHome}>Cancel</button>
