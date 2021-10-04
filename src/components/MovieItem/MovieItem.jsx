@@ -23,7 +23,7 @@ function MovieItem({ movie }) {
         <div key={movie.id} className="item">
             <h3 className="title">{movie.title}</h3>
             <div className="poster">
-                <img src={movie.poster} alt={movie.title} />
+                <img onClick={toDetailsPage} src={movie.poster} alt={movie.title} />
             </div>
             <Button onClick={toDetailsPage} variant="contained" 
                                             size="small"
