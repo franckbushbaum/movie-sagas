@@ -1,10 +1,11 @@
 # Project Name
 
-Weekend Movie Page
+Weekend Movie Page!  
+Click a movie to see the genres it falls into and a description of it.
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+The goal was to practice sending data from server to client and vice versa using reducers, as well as an attempt at styling a page.  I enjoy these projects when I get the methodically follow the data from one place to the next, injecting it out of a file, into another and so on... As time goes by I can imagine doing this over increasingly complex applications to bring them to life.
 
 - [x] Inventory of entire project.
 - [x] Create database
@@ -25,8 +26,9 @@ Your project description goes here. What problem did you solve? How did you solv
 - [x] Pass movies to individual component.
 - [x] .map and create a description button for each movie.
 - [x] Create saga for Details.jsx
-- [] GET request to Details.jsx
-- [] Append data to Details.jsx
+- [x] GET request to Details.jsx
+- [x] Append data to Details.jsx
+- [] It's completed, but the Query to get the descriptions needs to be refined a bit.
 
 
 
