@@ -13,31 +13,48 @@ function AddMovie() {
 
 
     const dispatch = useDispatch();
+    
     const history = useHistory();
 
 
-    //If there is a way to combine setMovieTitle, setMoviePoster and setMovieDescription
-    //I would love to see it. Spoiler: There absolutely is one.
+    // If there is a way to combine setMovieTitle, setMoviePoster and setMovieDescription
+    // I would love to see it. Spoiler: There absolutely is one.
 
-    const setMovieTitle = (event) => {
-        setMovie({
-            ...movie,
-            title: event.target.value
-        })
-    }
+    // const setMovieTitle = (event) => {
+    //     setMovie({
+    //         ...movie,
+    //         title: event.target.value
+    //     })
+    // }
 
-    const setMoviePoster = (event) => {
-        setMovie({
-            ...movie,
-            poster: event.target.value
-        })
-    }
+    
 
-    const setMovieDescription = (event) => {
-        setMovie({
-            ...movie,
-            description: event.target.value
-        })
+    // const setMoviePoster = (event) => {
+    //     setMovie({
+    //         ...movie,
+    //         poster: event.target.value
+    //     })
+    // }
+
+    // const setMovieDescription = (event) => {
+    //     setMovie({
+    //         ...movie,
+    //         description: event.target.value
+    //     })
+    // }
+
+    const setMovieInput = (event) => {
+        switch (event.target.id){
+            case 'title':
+                setMovie({...movie, title: event.target.value})
+                break;
+            case 'description':
+                setMovie({...movie, description: event.target.value})
+                break;
+            case 'poster':
+                setMovie({...movie, poster: event.target.value})
+                break;
+        }
     }
 
     const setGenre = (event) => {
@@ -50,11 +67,11 @@ function AddMovie() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log('in handleSubmit')
+        alert('Movie Added!')
         dispatch({
             type: 'ADD_MOVIE',
             payload: movie
-        })
+        })   
     }
 
     const backToHome = () => {
@@ -71,33 +88,33 @@ function AddMovie() {
                     variant="outlined"
                     required
                     style= {{ backgroundColor: '#dbe3de'}} 
-                    id={1}
+                    id={"title"}
                     required
                     placeholder="Title"
-                    value={movie.title}
-                    onChange={setMovieTitle}
+                    value={movie.titles}
+                    onChange={setMovieInput}
                 />
                 <TextField 
                     label="Add movie poster"
                     variant="outlined"
                     required
                     style= {{ backgroundColor: '#dbe3de'}} 
-                    id={2}
+                    id={"poster"}
                     required
                     placeholder="Poster"
                     value={movie.poster}
-                    onChange={setMoviePoster}
+                    onChange={setMovieInput}
                 />
                 <TextField 
                     label="description"
                     variant="outlined"
                     required
                     style= {{ backgroundColor: '#dbe3de'}} 
-                    id={3}
+                    id={"description"}
                     required
                     placeholder="Description"
                     value={movie.description}
-                    onChange={setMovieDescription}
+                    onChange={setMovieInput}
                 />
                 {/* On Load, the value of the input will be 'Adventure', if the user happens to 
                 want to add a movie whose genre is 'Adventure', and doesn't select anything, I've noticed that
@@ -119,7 +136,7 @@ function AddMovie() {
                 </select>
                 <input type='submit' value='Submit' />
             </form>
-            <button class="btn" onClick={backToHome}>Cancel</button>
+            <button onClick={backToHome}>Cancel</button>
         </>
 
 
