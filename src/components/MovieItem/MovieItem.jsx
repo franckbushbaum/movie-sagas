@@ -1,6 +1,8 @@
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { BsArrowRightShort } from "react-icons/bs";
+import Paper from '@material-ui/core/Paper';
 import './MovieItem.css';
 
 function MovieItem({ movie }) {
@@ -23,7 +25,12 @@ function MovieItem({ movie }) {
             <div className="poster">
                 <img src={movie.poster} alt={movie.title} />
             </div>
-            <Button onClick={toDetailsPage} variant="contained" size="small">Description</Button>
+            <Button onClick={toDetailsPage} variant="contained" 
+                                            size="small"
+                                            color="primary"
+                                            style= {{
+                                                fontSize: 13
+                                            }}>Description<BsArrowRightShort/></Button>
         </div>
 
     );

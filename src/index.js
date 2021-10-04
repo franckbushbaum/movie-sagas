@@ -51,7 +51,7 @@ function* selectedGenre(action) {
         // console.log('IN SELECTED MOVIE', movie);
         const theGenres = yield axios.get(`/api/genre/details/${movie.id}`);
         console.log('IN GENRES FUNCTION', theGenres);
-        // yield put({ type: 'SET_MOVIE_DETAIL', payload: theGenres.data })
+        yield put({ type: 'SET_GENRES', payload: theGenres.data })
     } catch (error) {
         console.log('error in selectedMovie', error);
     }
@@ -103,6 +103,9 @@ const specificMovie = (state = {}, action) => {
             return state;
     }
 }
+
+//I was tempted to try storing data in the same reducer at first..
+//Used to store genre data for specific movie when 'Description' button is clicked.
 
 
 //3 THE STORE

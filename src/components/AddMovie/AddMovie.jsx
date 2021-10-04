@@ -119,7 +119,7 @@ function AddMovie() {
                 </select>
                 <input type='submit' value='Submit' />
             </form>
-            <button onClick={backToHome}>Cancel</button>
+            <button class="btn" onClick={backToHome}>Cancel</button>
         </>
 
 

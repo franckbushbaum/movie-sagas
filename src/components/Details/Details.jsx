@@ -5,6 +5,9 @@ import MovieItem from '../MovieItem/MovieItem';
 
 function Details(){
     const movieDetails = useSelector(store => store.specificMovie)
+
+    const movieGenres = useSelector(store => store.genres)
+
     const history = useHistory()
 
     const backToHome = () => {
@@ -17,6 +20,7 @@ function Details(){
         <>
             
             {/* <div>{JSON.stringify(movieDetails)}</div>  */}
+            <div>{JSON.stringify(movieGenres)}</div> 
             <h1>{movieDetails.title}</h1>
             <h4>{movieDetails.description}</h4>
             <button  onClick={backToHome}>back</button>

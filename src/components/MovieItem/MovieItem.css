@@ -1,7 +1,7 @@
 .item {
     border-radius: 15px;
     flex:1;
-    margin: 10px;
+    margin: 20px;
     /* background-color: rgb(42, 165, 165); */
 }
 
@@ -16,5 +16,5 @@
 }
 
 .poster{
-    /* background-color: rgb(64, 134, 17); */
+    
 }
