@@ -7,4 +7,18 @@ router.get('/', (req, res) => {
   res.sendStatus(500)
 });
 
+router.get('/details/:id', (req, res) => {
+  const queryText = 'SELECT * FROM movies_genres WHERE movie_id=$1;';
+  console.log('req.params is', req.params);
+  pool.query(queryText, [req.params.id])
+    .then(result => {
+      res.send(result.rows);
+      console.log('THIS IS RESULT.ROWS', result.rows);
+    })
+    .catch((error) => {
+      console.log('Error completing SELECT genre query', error);
+      res.sendStatus(500);
+    })
+})
+
 module.exports = router;

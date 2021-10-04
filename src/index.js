@@ -16,6 +16,7 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('ADD_MOVIE', addMovie)
     yield takeEvery('SET_SELECTED_MOVIE', selectedMovie)
+    yield takeEvery('SET_SELECTED_MOVIE', selectedGenre)
 }
 //1 THE FUNCTIONS                                                  
 function* addMovie(action) {
@@ -34,10 +35,23 @@ function* selectedMovie(action) {
     try {
         //selected movie, action.payload will be selected move from /details
         const movie = action.payload;
-        console.log('IN SELECTED MOVIEEEE', movie);
+        // console.log('IN SELECTED MOVIE', movie);
         const movieDetails = yield axios.get(`/api/movie/details/${movie.id}`);
-        console.log('IN FUNCTION', movieDetails);
+        // console.log('IN FUNCTION', movieDetails);
         yield put({ type: 'SET_MOVIE_DETAIL', payload: movieDetails.data })
+    } catch (error) {
+        console.log('error in selectedMovie', error);
+    }
+}
+
+function* selectedGenre(action) {
+    try {
+        //selected movie, action.payload will be selected move from /details
+        const movie = action.payload;
+        // console.log('IN SELECTED MOVIE', movie);
+        const theGenres = yield axios.get(`/api/genre/details/${movie.id}`);
+        console.log('IN GENRES FUNCTION', theGenres);
+        // yield put({ type: 'SET_MOVIE_DETAIL', payload: theGenres.data })
     } catch (error) {
         console.log('error in selectedMovie', error);
     }
@@ -48,7 +62,7 @@ function* fetchAllMovies() {
     // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
-        console.log('get all:', movies.data);
+        // console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
     } catch {

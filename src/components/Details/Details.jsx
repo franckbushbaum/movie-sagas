@@ -15,9 +15,11 @@ function Details(){
 
     return(
         <>
-            <p>Under Construction....</p>
-            <div>{JSON.stringify(movieDetails)}</div> 
-            <button  onClick={backToHome}>Cancel</button>
+            
+            {/* <div>{JSON.stringify(movieDetails)}</div>  */}
+            <h1>{movieDetails.title}</h1>
+            <h4>{movieDetails.description}</h4>
+            <button  onClick={backToHome}>back</button>
         </>
 
 
