@@ -13,7 +13,7 @@ function AddMovie() {
 
 
     const dispatch = useDispatch();
-    
+
     const history = useHistory();
 
 
@@ -43,6 +43,7 @@ function AddMovie() {
     //     })
     // }
 
+//Record the input title, description and poster.
     const setMovieInput = (event) => {
         switch (event.target.id){
             case 'title':
@@ -84,6 +85,7 @@ function AddMovie() {
             <h2>Add a Movie</h2>
             <form onSubmit={handleSubmit} className="add-movie-form">
                 <TextField 
+                    className="title-input"
                     label="title"
                     variant="outlined"
                     required

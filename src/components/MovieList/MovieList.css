@@ -1,12 +1,16 @@
+
+
 .movies {
     display : flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 
 
-.addMovie {
-    float: right;
-    margin: 1%;
+.top {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
 }

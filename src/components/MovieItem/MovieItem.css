@@ -1,7 +1,18 @@
+.button1 {
+    margin: 8px;
+}
+
+.button2 {
+    margin-bottom: 8px;
+}
+
 .item {
     border-radius: 15px;
-    flex:1;
-    margin: 20px;
+    display: flex;
+    flex-direction:column;
+    margin: 30px;
+    /* Concerning the Weather App tutorial, which had a color of #000000d0 "Lets make the color 000000 with a transparency of d0" */
+    background: #00000083;
     /* background-color: rgb(42, 165, 165); */
 }
 
@@ -12,9 +23,11 @@
 }
 
 .title{
- /* background-color: brown; */
 }
 
 .poster{
+    border-radius: 15px;
+    margin-left: 7px;
+    margin-right: 7px;
     
 }

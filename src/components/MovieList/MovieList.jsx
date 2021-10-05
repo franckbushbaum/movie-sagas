@@ -23,14 +23,18 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
-            <Button variant="contained" className="addMovie" onClick={toAddMoviePage}>Add a Movie</Button>
+            
+            <div className="top">
+                <div className="add-movie">
+                    <Button variant="contained" className="addMovie" onClick={toAddMoviePage}>Add a Movie</Button>
+                </div>
+            </div>
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                // data {movie} is now being passed down to the child component, MovieItem. Now, we need to
-                // receive that data in the MovieItem component..
-                        <MovieItem 
+                        // data {movie} is now being passed down to the child component, MovieItem. Now, we need to
+                        // receive that data in the MovieItem component..
+                        <MovieItem
                             movie={movie} />
                     );
                 })}
