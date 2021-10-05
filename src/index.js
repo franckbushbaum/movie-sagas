@@ -17,6 +17,7 @@ function* rootSaga() {
     yield takeEvery('ADD_MOVIE', addMovie)
     yield takeEvery('SET_SELECTED_MOVIE', selectedMovie)
     yield takeEvery('SET_SELECTED_MOVIE', selectedGenre)
+    yield takeEvery('REMOVE_TITLE', removeTitle)
 }
 //1 THE FUNCTIONS                                                  
 function* addMovie(action) {
@@ -28,6 +29,19 @@ function* addMovie(action) {
         yield put({ type: 'FETCH_MOVIES' })
     } catch {
         console.log('ERROR in addMovie')
+    }
+}
+
+function* removeTitle(action) {
+    try {
+        //selected movie, action.payload will be selected move from /details
+        const movie = action.payload;
+        console.log('IN REMOVE', movie);
+        yield axios.delete(`/api/movie/details/${movie.id}`, movie);
+        // console.log('IN REMOVE FUNCTION', movieDetails);
+        yield put({ type: 'FETCH_MOVIES'});
+    } catch (error) {
+        console.log('error in selectedMovie', error);
     }
 }
 

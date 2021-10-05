@@ -19,7 +19,7 @@ function MovieItem({ movie }) {
     }
 
     const removeTitle = () => {
-        dispatch({ type: 'SET_SELECTED_MOVIE', payload: movie });
+        dispatch({ type: 'REMOVE_TITLE', payload: movie });
         // console.log('IN SELECTED MOVIE', movie)
     }
 
@@ -35,8 +35,9 @@ function MovieItem({ movie }) {
                                             size="small"
                                             color="primary"
                                             style= {{
-                                                fontSize: 13
-                                            }}>Description<BsArrowRightShort/></Button>
+                                                fontSize: 11,
+                                                borderRadius: "18px",
+                                            }}>Description<BsArrowRightShort size="21px"/></Button>
                     </div>
                     <div className="button2">
                         <button onClick={removeTitle}>Delete</button>
