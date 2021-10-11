@@ -8,7 +8,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/details/:id', (req, res) => {
-  const queryText = 'SELECT * FROM movies JOIN movies_genres ON movies_genres.movie_id = movies.id JOIN genres ON movies_genres.genre_id = genres.id WHERE movies.id = $1;';
+  const queryText = `SELECT * FROM movies JOIN movies_genres 
+                      ON movies_genres.movie_id = movies.id JOIN genres 
+                      ON movies_genres.genre_id = genres.id 
+                      WHERE movies.id = $1;`;
   console.log('req.params is', req.params);
   pool.query(queryText, [req.params.id])
     .then(result => {

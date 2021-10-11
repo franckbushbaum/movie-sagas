@@ -1,7 +1,7 @@
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort, BsTrashFill } from "react-icons/bs";
 import Paper from '@material-ui/core/Paper';
 import './MovieItem.css';
 
@@ -40,7 +40,11 @@ function MovieItem({ movie }) {
                                             }}>Description<BsArrowRightShort size="21px"/></Button>
                     </div>
                     <div className="button2">
-                        <button onClick={removeTitle}>Delete</button>
+                        <Button variant="contained" 
+                                size="small" 
+                                color="secondary" 
+                                style={{ fontSize: 11, borderRadius:"29px"}}  
+                                onClick={removeTitle}>Remove <BsTrashFill color="black" style= {{paddingLeft: "8px"}}/></Button>
                     </div>
         </div>
 

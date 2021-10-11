@@ -10,6 +10,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
+import { action } from 'commander';
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -37,7 +38,7 @@ function* removeTitle(action) {
         //selected movie, action.payload will be selected move from /details
         const movie = action.payload;
         console.log('IN REMOVE', movie);
-        yield axios.delete(`/api/movie/details/${movie.id}`, movie);
+        yield axios.delete(`/api/movie/delete/${movie.id}`);
         // console.log('IN REMOVE FUNCTION', movieDetails);
         yield put({ type: 'FETCH_MOVIES'});
     } catch (error) {
@@ -60,6 +61,7 @@ function* selectedMovie(action) {
 
 function* selectedGenre(action) {
     try {
+        console.log('in SELECTEDGENRE', action)
         //selected movie, action.payload will be selected move from /details
         const movie = action.payload;
         // console.log('IN SELECTED MOVIE', movie);
@@ -117,6 +119,8 @@ const specificMovie = (state = {}, action) => {
             return state;
     }
 }
+
+
 
 //I was tempted to try storing data in the same reducer at first..
 //Used to store genre data for specific movie when 'Description' button is clicked.
