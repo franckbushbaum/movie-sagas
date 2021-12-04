@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   res.sendStatus(500)
 });
 
+//Get selected movie by id.
 router.get('/details/:id', (req, res) => {
   const queryText = `SELECT * FROM movies JOIN movies_genres 
                       ON movies_genres.movie_id = movies.id JOIN genres 

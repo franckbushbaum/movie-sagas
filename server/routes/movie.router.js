@@ -3,8 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-
-  const query = `SELECT * FROM movies ORDER BY "title" ASC`;
+ const query = `SELECT * FROM movies ORDER BY "title" ASC`;
   pool.query(query)
     .then(result => {
       res.send(result.rows);
@@ -16,12 +15,11 @@ router.get('/', (req, res) => {
 
 });
 
-router.get('/details/:id', (req, res) => {
+router.get('/details/:id', (req, res) => {4
   const queryText = 'SELECT * FROM movies WHERE id=$1;';
   pool.query(queryText, [req.params.id])
     .then(result => {
       res.send(result.rows[0]);
-      // console.log('THIS IS RESULT.ROWS', result.rows[0])
     })
     .catch((error) => {
       console.log('Error completing SELECT movie query', error);
@@ -29,6 +27,7 @@ router.get('/details/:id', (req, res) => {
     })
 })
 
+//Delete selected movie
 router.delete('/delete/:id', (req, res) => {
   console.log(req.params);
   const queryText = `DELETE FROM "movies_genres"
@@ -47,9 +46,8 @@ router.delete('/delete/:id', (req, res) => {
 })
 })
 
+//Post a new movie.
 router.post('/', (req, res) => {
-  // console.log("SERVER-SIDE ADD-MOVIE", req.body);
-  // RETURNING "id" will give us back the id of the created movie
   const insertMovieQuery = `
   INSERT INTO "movies" ("title", "poster", "description")
   VALUES ($1, $2, $3)

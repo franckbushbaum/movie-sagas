@@ -35,7 +35,7 @@ function* addMovie(action) {
 
 function* removeTitle(action) {
     try {
-        //selected movie, action.payload will be selected move from /details
+        //selected movie, action.payload will be selected movie from /details
         const movie = action.payload;
         console.log('IN REMOVE', movie);
         yield axios.delete(`/api/movie/delete/${movie.id}`);

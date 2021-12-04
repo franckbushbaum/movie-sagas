@@ -1,0 +1,7 @@
+.card-container{
+    display: flex;
+}
+
+.poster{
+    margin: 5px;
+}

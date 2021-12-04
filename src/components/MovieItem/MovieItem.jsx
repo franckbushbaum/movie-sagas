@@ -35,7 +35,7 @@ function MovieItem({ movie }) {
                                             size="small"
                                             color="primary"
                                             style= {{
-                                                fontSize: 11,
+                                                fontSize: 15,
                                                 borderRadius: "18px",
                                             }}>Description<BsArrowRightShort size="21px"/></Button>
                     </div>
@@ -43,8 +43,8 @@ function MovieItem({ movie }) {
                         <Button variant="contained" 
                                 size="small" 
                                 color="secondary" 
-                                style={{ fontSize: 11, borderRadius:"29px"}}  
-                                onClick={removeTitle}>Remove <BsTrashFill color="black" style= {{paddingLeft: "8px"}}/></Button>
+                                style={{ fontSize: 17, borderRadius:"29px"}}  
+                                onClick={removeTitle}><BsTrashFill color="black" style= {{borderRadius: "50%"}}/></Button>
                     </div>
         </div>
 
