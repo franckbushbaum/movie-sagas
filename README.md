@@ -15,6 +15,8 @@
 ---
 <br />
 
+![Alttext](https://media3.giphy.com/media/MPI1PRc4ySVo6oEKyv/giphy.gif)
+
 
 
 - [x] Inventory of entire project.
