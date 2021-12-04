@@ -41,7 +41,7 @@
 - [x] GET request to Details.jsx
 - [x] Append data to Details.jsx
 - [x] It's completed, but the Query to get the descriptions needs to be refined a bit.
-- [x] Some quick styling before Monday!
+- [x] Styling on Sunday
 
 
 
