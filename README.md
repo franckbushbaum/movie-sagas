@@ -22,8 +22,9 @@
 <br />
 
 <b>Able to add a movie, with an image, description and genres!</b>
+<br />
 
-![Alttext](https://media1.giphy.com/media/rIHsGCGtnFmIVcbIGG/giphy.gif)
+![Alttext](https://media3.giphy.com/media/JVDB0tQBJprW9UVO1B/giphy.gif)
 
 
 
