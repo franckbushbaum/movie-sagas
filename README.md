@@ -14,8 +14,11 @@
 
 ---
 <br />
-
+<b>Every movie poster will navigate to a Description page with genres. Movies can be deleted by clicking on the red trash bin.</b>
+<br />
 ![Alttext](https://media3.giphy.com/media/MPI1PRc4ySVo6oEKyv/giphy.gif)
+
+<b>Able to add a movie, with an image, description and genres!</b>
 ![Alttext](https://media1.giphy.com/media/rIHsGCGtnFmIVcbIGG/giphy.gif)
 
 
