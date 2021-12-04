@@ -1,6 +1,7 @@
 # Project Name
 
-Weekend Movie Page!  
+<b>Weekend Movie Page! 🎥 <b>
+    
 Click a movie to see the genres it falls into and a description of it.
 
 ## Description
@@ -10,7 +11,6 @@ The goal was to practice sending data from server to client and vice versa using
 ---
 
 #### <span style="color: #9ED2F0">_Duration: Two-Day Sprint_</span><br />
-<br />
 
 ---
 <br />
@@ -27,9 +27,9 @@ The goal was to practice sending data from server to client and vice versa using
     - [x]Create 4 inputs. 3 go to 'movies' database. 1 of these sends to a Genre database. Test.
     - [x]Send movies data to Saga. Test.
     - [x]Create Function to post to server. Test. Test passes but, since the database will not allow 'null' values, we can't move on to the next step without passing in a 'Genre' property.
-        -[x]Create a genre dropdown button and push value into payload. test.
-        -[x]Send all data to Saga. Test.
-        -[x]Send data to server, input all values into database.
+     -[x]Create a genre dropdown button and push value into payload. test.
+     -[x]Send all data to Saga. Test.
+     -[x]Send data to server, input all values into database.
     -[x]New Movie Shows up on page.
 
 - [x] Pass movies to individual component.
