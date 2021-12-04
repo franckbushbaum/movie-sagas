@@ -1,12 +1,12 @@
-# Project Name
 
-<b>Weekend Movie Page! 🎥 <b>
+
+# Weekend Movie Page! 🎥 
     
 Click a movie to see the genres it falls into and a description of it.
 
 ## Description
 
-The goal was to practice sending data from server to client and vice versa using reducers, as well as an attempt at styling a page.  I enjoy these projects when I get the methodically follow the data from one place to the next, injecting it out of a file, into another and so on... As time goes by I can imagine doing this over increasingly complex applications to bring them to life.
+<b>The goal was to practice sending data from server to client and vice versa using reducers, as well as an attempt at styling a page.  I enjoy these projects when I get the methodically follow the data from one place to the next, injecting it out of a file, into another and so on... As time goes by I can imagine doing this over increasingly complex applications to bring them to life.</b>
 
 ---
 
