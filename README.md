@@ -16,6 +16,7 @@
 <br />
 
 
+
 - [x] Inventory of entire project.
 - [x] Create database
 - [x] Draw a diagram of Home page, Details page, and Add Movie page.
