@@ -2,7 +2,7 @@
 
 # Weekend Movie Page! 🎥 
     
-Click a movie to see the genres it falls into and a description of it.
+<b>Click a movie to see the genres it falls into and a description of it. You can also add or delete a movie!</b> 
 
 ## Description
 
